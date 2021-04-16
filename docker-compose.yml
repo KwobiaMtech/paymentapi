@@ -1,0 +1,27 @@
+version: '3.7'
+
+services:
+  web:
+    build: ./paymentapi
+    command: python manage.py runserver 0.0.0.0:8000
+    volumes:
+      - ./paymentapi/:/usr/src/paymentapi/
+    ports:
+      - 8005:8000
+    env_file:
+      - ./.env.dev
+    depends_on:
+      - db
+  db:
+    image: postgres:12.0-alpine
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data/
+    environment:
+      - POSTGRES_USER=payment_user
+      - POSTGRES_PASSWORD=payment_pass
+      - POSTGRES_DB=payment_api
+
+volumes:
+  postgres_data:

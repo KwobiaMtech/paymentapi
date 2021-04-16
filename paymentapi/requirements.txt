@@ -1,0 +1,9 @@
+coverage
+Django
+django-nose
+djangorestframework
+nose
+requests
+apscheduler
+psycopg2-binary
+django-environ
