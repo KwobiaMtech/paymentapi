@@ -34,7 +34,7 @@ SECRET_KEY = 'django-insecure-(kq6e%6_p-7-j^1yd&s*q$4uw29##tqpr0z!-mlfg2xcpwdp=e
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.environ.get('DEBUG', True)
 
-ALLOWED_HOSTS = env('DJANGO_ALLOWED_HOSTS').split(" ")
+# ALLOWED_HOSTS = env('DJANGO_ALLOWED_HOSTS').split(" ")
 
 # Application definition
 
@@ -88,13 +88,16 @@ WSGI_APPLICATION = 'core.wsgi.application'
 DATABASES = {
     "default": {
         "ENGINE": os.environ.get("SQL_ENGINE", "django.db.backends.postgresql"),
-        "NAME": os.environ.get("SQL_DATABASE", 'payment_api'),
-        "USER": os.environ.get("SQL_USER", "patrick"),
-        "PASSWORD": os.environ.get("SQL_PASSWORD", "osofo"),
-        "HOST": os.environ.get("SQL_HOST", "localhost"),
-        "PORT": os.environ.get("SQL_PORT", "5432"),
+        "NAME": os.environ.get("POSTGRES_DB", 'payment_api'),
+        "USER": os.environ.get("POSTGRES_USER", "patrick"),
+        "PASSWORD": os.environ.get("POSTGRES_PASSWORD", "osofo"),
+        "HOST": os.environ.get("POSTGRES_SERVER", "localhost"),
+        "PORT": os.environ.get("POSTGRES_PORT", "5432"),
+        "DJANGO_ALLOWED_HOSTS": "localhost 127.0.0.1"
     }
 }
+
+
 
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators

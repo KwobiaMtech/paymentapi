@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: postgres-payment
+  namespace: payment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: postgres-payment
+  template:
+    metadata:
+      labels:
+        app: postgres-payment
+    spec:
+      containers:
+        - name: postgres
+          image: postgres:10.4
+          imagePullPolicy: "IfNotPresent"
+          ports:
+            - containerPort: 5432
+          envFrom:
+            - configMapRef:
+                name: postgres-payment-config
+          volumeMounts:
+            - mountPath: /var/lib/postgresql/payment/data
+              name: payment-postgredb
+      volumes:
+        - name: payment-postgredb
+          persistentVolumeClaim:
+            claimName: postgres-payment-pv-claim

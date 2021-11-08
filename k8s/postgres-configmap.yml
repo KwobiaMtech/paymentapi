@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: postgres-payment-config
+  namespace: payment
+  labels:
+    app: postgres-payment
+data:
+  POSTGRES_DB: paymentdb
+  POSTGRES_USER: paymentuser
+  POSTGRES_PASSWORD: payment

@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: payment-deployment
+  namespace: payment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      component: server
+  template:
+    metadata:
+      labels:
+        component: server
+    spec:
+      containers:
+        - name: topup
+          image: kwobia/webpay
+          ports:
+            - containerPort: 8000
+          env:
+            - name: POSTGRES_USER
+              value: paymentuser
+            - name: POSTGRES_SERVER
+              value: postgres-payment-service
+            - name: POSTGRES_PORT
+              value: "5432"
+            - name: POSTGRES_DB
+              value: paymentdb
+            - name: POSTGRES_PASSWORD
+              value: payment
+
