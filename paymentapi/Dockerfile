@@ -16,7 +16,7 @@ RUN rm -rf /var/cache/apk/* && \
 RUN apk update \
     && apk add postgresql-dev gcc python3-dev musl-dev
 
-RUN apt-get install tzdata
+RUN apk add tzdata
 
 # install dependencies
 RUN pip install --upgrade pip
