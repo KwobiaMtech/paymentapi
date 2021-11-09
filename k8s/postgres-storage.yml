@@ -2,7 +2,7 @@ kind: PersistentVolume
 apiVersion: v1
 metadata:
   name: postgres-payment-pv-volume
-  namespace: payment
+  namespace: payment-api
   labels:
     type: local
     app: postgres-payment

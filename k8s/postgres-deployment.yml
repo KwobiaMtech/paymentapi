@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: postgres-payment
-  namespace: payment
+  namespace: payment-api
 spec:
   replicas: 1
   selector:
