@@ -49,7 +49,8 @@ INSTALLED_APPS = [
     'rest_framework.authtoken',
     'api',
     'users',
-    'api.schedulerConfig.SchedulerConfig'
+    'api.schedulerConfig.SchedulerConfig',
+    'drf_yasg',
 ]
 
 MIDDLEWARE = [

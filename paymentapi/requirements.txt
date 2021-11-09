@@ -7,3 +7,4 @@ requests
 apscheduler
 psycopg2-binary
 django-environ
+drf-yasg[validation]
