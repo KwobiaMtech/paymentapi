@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
         - name: topup
-          image: kwobia/webpay
+          image: kwobia/payment-api:1.1
           ports:
             - containerPort: 8000
           env:
