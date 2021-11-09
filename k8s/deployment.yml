@@ -14,7 +14,7 @@ spec:
         component: server
     spec:
       containers:
-        - name: topup
+        - name: payment-api
           image: kwobia/payment-api:1.1
           ports:
             - containerPort: 8000
