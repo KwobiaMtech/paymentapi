@@ -18,4 +18,4 @@ spec:
               service:
                 name: payment-service
                 port:
-                  number: 7080
+                  number: 8000
