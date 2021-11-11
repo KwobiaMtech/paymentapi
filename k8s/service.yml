@@ -3,8 +3,10 @@ kind: Service
 metadata:
   name: payment-service
 spec:
-  ports:
-  - port: 8000
-    targetPort: 8000
+  type: ClusterIP
   selector:
-    app: payment-api
+    component: server
+  ports:
+    - port: 8000
+      targetPort: 8000
+

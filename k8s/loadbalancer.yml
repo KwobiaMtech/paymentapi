@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: service
+metadata:
+  name: payment-lb
+spec:
+ type: LoadBalancer
+ selector:
+  app: payment-api
+ ports:
+ - protocol: TCP
+   port: 8000
+   targetPort: 7080
