@@ -1,13 +1,12 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: payment-service
+  name: payment-server-cluster-ip-service
   namespace: payment-api
 spec:
-  ports:
-    - protocol: TCP
-      port: 8080
-      targetPort: 8080
-      nodePort: 30867
+  type: ClusterIP
   selector:
-    app: payment-service
+    component: server
+  ports:
+    - port: 8000
+      targetPort: 8000
