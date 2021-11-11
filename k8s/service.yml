@@ -4,9 +4,12 @@ metadata:
   name: payment-server-cluster-ip-service
   namespace: payment-api
 spec:
-  type: ClusterIP
+  type: NodePort
   selector:
     component: server
   ports:
     - port: 8000
       targetPort: 8000
+      nodePort: 30033
+      protocol: TCP
+      name: http
