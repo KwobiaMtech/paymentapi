@@ -1,8 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: payment-deployment
-  namespace: payment-api
+  name: payment-api
 spec:
   replicas: 1
   selector:
@@ -22,7 +21,7 @@ spec:
             - name: POSTGRES_USER
               value: paymentuser
             - name: POSTGRES_SERVER
-              value: postgres-payment-service
+              value: payment-service
             - name: POSTGRES_PORT
               value: "5432"
             - name: POSTGRES_DB

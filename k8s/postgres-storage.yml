@@ -1,11 +1,10 @@
 kind: PersistentVolume
 apiVersion: v1
 metadata:
-  name: postgres-payment-pv-volume
-  namespace: payment-api
+  name: payment-postgres-pv-volume
   labels:
     type: local
-    app: postgres-payment
+    app: payment-postgres
 spec:
   storageClassName: manual
   capacity:
@@ -13,14 +12,14 @@ spec:
   accessModes:
     - ReadWriteMany
   hostPath:
-    path: "/mnt/data"
+    path: "/mnt/payment/data"
 ---
 kind: PersistentVolumeClaim
 apiVersion: v1
 metadata:
-  name: postgres-payment-pv-claim
+  name: payment-postgres-pv-claim
   labels:
-    app: postgres-payment
+    app: payment-postgres
 spec:
   storageClassName: manual
   accessModes:

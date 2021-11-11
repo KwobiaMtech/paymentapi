@@ -1,13 +1,12 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: postgres-payment-service
-  namespace: payment-api
+  name: payment-postgres-service
   labels:
-    app: postgres-payment
+    app: payment-postgres
 spec:
   type: NodePort
   ports:
    - port: 5432
   selector:
-   app: postgres-payment
+   app: payment-postgres
