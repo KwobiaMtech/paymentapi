@@ -2,6 +2,7 @@ apiVersion: v1
 kind: ConfigMap
 metadata:
   name: payment-postgres-config
+  namespace: payment-api
   labels:
     app: payment-postgres
 data:

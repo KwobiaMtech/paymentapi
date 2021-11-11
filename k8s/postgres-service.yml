@@ -2,6 +2,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: payment-postgres-service
+  namespace: payment-api
   labels:
     app: payment-postgres
 spec:
