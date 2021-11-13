@@ -16,7 +16,8 @@ spec:
       containers:
         - name: payment-api
           image: kwobia/payment-api:1.4.2
-          command: [ "./manage.py", "runserver", "0.0.0.0:8990" ]
+          command: [ "./manage.py" ]
+          args: [  "runserver", "0.0.0.0:8990"  ]
             livenessProbe:
               httpGet:
                 path: /healthz
