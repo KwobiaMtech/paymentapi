@@ -16,19 +16,6 @@ spec:
       containers:
         - name: payment-api
           image: kwobia/payment-api:1.4.2
-          command: [ "./manage.py" ]
-          args: [  "runserver", "0.0.0.0:8990"  ]
-            livenessProbe:
-              httpGet:
-                path: /healthz
-                port: 8990
-            readinessProbe:
-              # an http probe
-              httpGet:
-                path: /readiness
-                port: 8990
-              initialDelaySeconds: 10
-              timeoutSeconds: 5
           ports:
             - containerPort: 8990
           env:
