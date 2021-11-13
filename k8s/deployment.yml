@@ -15,6 +15,7 @@ spec:
     spec:
       containers:
         - name: payment-api
+          imagePullPolicy: Never
           image: kwobia/payment-api:1.4.3
           ports:
             - containerPort: 8990
