@@ -1,5 +1,5 @@
 # pull official base image
-FROM python:3.8.3-alpine
+FROM python:3.10.0-alpine3.14
 
 # set work directory
 WORKDIR /usr/src/paymentapi
@@ -28,6 +28,8 @@ COPY ./entrypoint.sh .
 
 # copy project
 COPY . .
+
+EXPOSE 8990
 
 # run entrypoint.sh
 ENTRYPOINT ["sh","/usr/src/paymentapi/entrypoint.sh"]

@@ -15,9 +15,9 @@ spec:
     spec:
       containers:
         - name: payment-api
-          image: kwobia/payment-api:1.4
+          image: kwobia/payment-api:1.4.2
           ports:
-            - containerPort: 8000
+            - containerPort: 8990
           env:
             - name: POSTGRES_USER
               value: paymentuser

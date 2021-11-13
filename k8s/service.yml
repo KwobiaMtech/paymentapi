@@ -8,6 +8,6 @@ spec:
   selector:
     component: server
   ports:
-    - port: 8000
-      targetPort: 8000
+    - port: 8990
+      targetPort: 8990
 
