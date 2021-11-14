@@ -34,7 +34,8 @@ SECRET_KEY = 'django-insecure-(kq6e%6_p-7-j^1yd&s*q$4uw29##tqpr0z!-mlfg2xcpwdp=e
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.environ.get('DEBUG', True)
 
-# ALLOWED_HOSTS = env('DJANGO_ALLOWED_HOSTS').split(" ")
+
+ALLOWED_HOSTS = os.environ.get("DJANGO_ALLOWED_HOSTS", '127.0.0.1 localhost api.payment.com api.etransactcash.com').split(" ")
 
 # Application definition
 
@@ -94,7 +95,6 @@ DATABASES = {
         "PASSWORD": os.environ.get("POSTGRES_PASSWORD", "osofo"),
         "HOST": os.environ.get("POSTGRES_SERVER", "localhost"),
         "PORT": os.environ.get("POSTGRES_PORT", "5432"),
-        "DJANGO_ALLOWED_HOSTS": "localhost 127.0.0.1"
     }
 }
 
