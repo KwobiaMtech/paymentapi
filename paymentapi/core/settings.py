@@ -35,7 +35,9 @@ SECRET_KEY = 'django-insecure-(kq6e%6_p-7-j^1yd&s*q$4uw29##tqpr0z!-mlfg2xcpwdp=e
 DEBUG = os.environ.get('DEBUG', True)
 
 
-ALLOWED_HOSTS = os.environ.get("DJANGO_ALLOWED_HOSTS", '127.0.0.1 localhost api.payment.com api.etransactcash.com').split(" ")
+#ALLOWED_HOSTS = os.environ.get("DJANGO_ALLOWED_HOSTS", '127.0.0.1 localhost api.payment.com api.etransactcash.com').split(" ")
+
+ALLOWED_HOSTS = ['127.0.0.1', 'loccalhost', 'api.payment.com', 'api.etransactcash.com']
 
 # Application definition
 
