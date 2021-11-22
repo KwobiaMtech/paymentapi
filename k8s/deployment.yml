@@ -50,6 +50,8 @@ spec:
                   name: paystack-credentials
                   key: PAYSTACK_PUBLIC_KEY_TEST
             - name: PAYSTACK_API
-              value: "https://api.paystack.co/charge"
+              value: "https://api.paystack.co"
+            - name: DEBUG
+              value: False
 
 
