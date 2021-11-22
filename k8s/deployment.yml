@@ -29,8 +29,6 @@ spec:
               value: paymentdb
             - name: POSTGRES_PASSWORD
               value: payment
-            - name: PAYSTACK_API
-              value: https://api.paystack.co/charge
             - name: PAYSTACK_SECRET_KEY_LIVE
               valueFrom:
                 secretKeyRef:
