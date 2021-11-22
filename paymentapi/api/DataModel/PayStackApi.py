@@ -20,14 +20,10 @@ class PayStack:
         self.user_response = self.userResponse()
 
     def payStackFormat(self) -> dict:
-        phone = "0551234987" if Configuration.DEBUG is False else self.request["phone"]
-        print('get debug')
-        print(Configuration.DEBUG)
-
-        print('phone')
-        print(phone)
+        # phone = "0551234987" if Configuration.DEBUG is False else self.request["phone"]
+        phone = self.request["phone"]
         return {
-            "amount": self.request['amount'],
+            "amount": str(int(self.request['amount']) * 10000),
             "email": self.request['email'],
             "reference": self.request["reference"],
             "mobile_money": {"phone": phone, "provider": self.request['provider']}
@@ -39,6 +35,8 @@ class PayStack:
             "reference": self.response["data"]["reference"],
             "status": self.response["data"]["status"],
         }
+        print('get display_text')
+        print(self.response["data"]["display_text"])
         if "display_text" in self.response["data"]:
             sending["display_text"] = self.response["data"]["display_text"]
         return sending

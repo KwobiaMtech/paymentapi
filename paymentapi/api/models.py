@@ -11,7 +11,7 @@ class UserRequest(models.Model):
     user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     amount = models.CharField(_("Amount"), max_length=255)
     email = models.CharField(_("Email"), max_length=255)
-    reference = models.CharField(_("Reference"), max_length=255, unique=True, null=True)
+    reference = models.CharField(_("Reference"), max_length=255, unique=True)
     phone = models.CharField(_("Phone Number"), max_length=255)
 
     class Providers(models.TextChoices):
@@ -33,6 +33,6 @@ class TransactionResponse(models.Model):
     reference = models.CharField(_("Reference"), max_length=255)
     status = models.CharField(_("Status"), max_length=255)
     message = models.CharField(_("Message"), max_length=255, null=True)
-    display_text = models.CharField(_("Display Text"), max_length=255, unique=True, null=True)
+    display_text = models.CharField(_("Display Text"), max_length=255, null=True, default="")
     transaction_status = models.CharField(_("Transaction Status"), max_length=255, default="pending", null=True)
     callback_status = models.CharField(_("Call Back Status"), max_length=255,null=True)
