@@ -50,9 +50,6 @@ spec:
                   name: paystack-credentials
                   key: PAYSTACK_PUBLIC_KEY_TEST
             - name: PAYSTACK_API
-              valueFrom:
-                secretKeyRef:
-                  name: paystack-credentials
-                  key: PAYSTACK_API
+              value: "https://api.paystack.co/charge"
 
 
