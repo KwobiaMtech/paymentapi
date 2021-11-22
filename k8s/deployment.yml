@@ -34,6 +34,25 @@ spec:
                 secretKeyRef:
                   name: paystack-credentials
                   key: PAYSTACK_SECRET_KEY_LIVE
-
+            - name: PAYSTACK_PUBLIC_KEY_LIVE
+                valueFrom:
+                  secretKeyRef:
+                    name: paystack-credentials
+                    key: PAYSTACK_PUBLIC_KEY_LIVE
+            - name: PAYSTACK_SECRET_KEY_TEST
+                valueFrom:
+                  secretKeyRef:
+                    name: paystack-credentials
+                    key: PAYSTACK_SECRET_KEY_TEST
+            - name: PAYSTACK_PUBLIC_KEY_TEST
+                valueFrom:
+                  secretKeyRef:
+                    name: paystack-credentials
+                    key: PAYSTACK_PUBLIC_KEY_TEST
+            - name: PAYSTACK_API
+                valueFrom:
+                  secretKeyRef:
+                    name: paystack-credentials
+                    key: PAYSTACK_API
 
 
