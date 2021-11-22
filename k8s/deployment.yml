@@ -30,7 +30,7 @@ spec:
             - name: POSTGRES_PASSWORD
               value: payment
             - name: DEBUG
-              value: False
+              value: "False"
             - name: PAYSTACK_SECRET_KEY_LIVE
               valueFrom:
                 secretKeyRef:
