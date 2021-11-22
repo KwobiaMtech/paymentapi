@@ -29,6 +29,8 @@ spec:
               value: paymentdb
             - name: POSTGRES_PASSWORD
               value: payment
+            - name: DEBUG
+              value: False
             - name: PAYSTACK_SECRET_KEY_LIVE
               valueFrom:
                 secretKeyRef:
@@ -51,7 +53,5 @@ spec:
                   key: PAYSTACK_PUBLIC_KEY_TEST
             - name: PAYSTACK_API
               value: "https://api.paystack.co"
-            - name: DEBUG
-              value: False
 
 
