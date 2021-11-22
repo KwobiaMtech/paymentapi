@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
         - name: payment-api
-          image: kwobia/payment-api:1.5
+          image: kwobia/payment-api:1.6
           ports:
             - containerPort: 8990
           env:
