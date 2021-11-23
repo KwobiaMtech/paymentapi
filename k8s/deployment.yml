@@ -18,40 +18,9 @@ spec:
           image: kwobia/payment-api:1.6
           ports:
             - containerPort: 8990
-          env:
-            - name: POSTGRES_USER
-              value: paymentuser
-            - name: POSTGRES_SERVER
-              value: payment-postgres-service
-            - name: POSTGRES_PORT
-              value: "5432"
-            - name: POSTGRES_DB
-              value: paymentdb
-            - name: POSTGRES_PASSWORD
-              value: payment
-            - name: DEBUG
-              value: "False"
-            - name: PAYSTACK_SECRET_KEY_LIVE
-              valueFrom:
-                secretKeyRef:
-                  name: paystack-credentials
-                  key: PAYSTACK_SECRET_KEY_LIVE
-            - name: PAYSTACK_PUBLIC_KEY_LIVE
-              valueFrom:
-                secretKeyRef:
-                  name: paystack-credentials
-                  key: PAYSTACK_PUBLIC_KEY_LIVE
-            - name: PAYSTACK_SECRET_KEY_TEST
-              valueFrom:
-                secretKeyRef:
-                  name: paystack-credentials
-                  key: PAYSTACK_SECRET_KEY_TEST
-            - name: PAYSTACK_PUBLIC_KEY_TEST
-              valueFrom:
-                secretKeyRef:
-                  name: paystack-credentials
-                  key: PAYSTACK_PUBLIC_KEY_TEST
-            - name: PAYSTACK_API
-              value: "https://api.paystack.co"
+          envFrom:
+            - secretRef:
+                name: api-backend-env
+
 
 
