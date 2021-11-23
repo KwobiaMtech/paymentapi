@@ -9,13 +9,16 @@ https://docs.djangoproject.com/en/3.2/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.2/ref/settings/
 """
-import os
+
 from pathlib import Path
 
-import sys
 
-import environ
 from django.urls import reverse_lazy
+
+import os
+
+# Initialise environment variables
+import environ
 
 env = environ.Env(
     # set casting, default value
@@ -37,6 +40,9 @@ DEBUG = os.environ.get('DEBUG', True)
 
 
 ALLOWED_HOSTS = os.environ.get("ALLOWED_HOSTS", '127.0.0.1 localhost').split(" ")
+
+print('get allowed hosts')
+print(ALLOWED_HOSTS)
 
 # ALLOWED_HOSTS = ['127.0.0.1', 'localhost', 'api.payment.com', 'api.etransactcash.com']
 
