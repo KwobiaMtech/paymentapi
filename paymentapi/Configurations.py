@@ -20,4 +20,4 @@ class Configuration:
     PAYSTACK_SECRET_KEY: str = os.environ.get('PAYSTACK_SECRET_KEY_TEST') if DEBUG is False else os.environ.get('PAYSTACK_SECRET_KEY_LIVE')
     PAYSTACK_PUBLIC_KEY: str = os.environ.get('PAYSTACK_PUBLIC_KEY_TEST') if DEBUG is False else os.environ.get('PAYSTACK_PUBLIC_KEY_LIVE')
     PAYSTACK_API: str = os.environ.get('PAYSTACK_API')
-    PAYSTACK_API_REF: str = "https://api.paystack.co/transaction/verify/"
+    PAYSTACK_API_REF: str = os.environ.get('PAYSTACK_API_REF')
