@@ -1,5 +1,5 @@
 coverage
-Django
+Django==3.2
 django-nose
 djangorestframework
 nose
