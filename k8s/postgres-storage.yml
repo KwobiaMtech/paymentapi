@@ -19,6 +19,7 @@ kind: PersistentVolumeClaim
 apiVersion: v1
 metadata:
   name: payment-postgres-pv-claim
+  namespace: payment-api
   labels:
     app: payment-postgres
 spec:
