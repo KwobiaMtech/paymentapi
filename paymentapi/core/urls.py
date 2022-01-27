@@ -32,10 +32,10 @@ def root_redirect(request):
 
 schema_view = get_schema_view(
     openapi.Info(
-        title="WEB API WITH PAYSTACK",
+        title="PAYMENT API",
         default_version='v1',
         description="payment api ",
-        contact=openapi.Contact(email="patrickkwabenaoduro@gmail.com"),
+        contact=openapi.Contact(email="poduro@mtechcomm.com"),
         license=openapi.License(name="BSD License"),
     ),
     public=True,
